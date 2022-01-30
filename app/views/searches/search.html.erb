@@ -1,0 +1,48 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      
+      <table class="table">
+        <% if @range == "User" %>
+        <h2>
+        Users search for "<%= @word %>"
+        </h2>
+        <thead>
+          <tr>
+            <th></th>
+            <th>name</th>
+          </tr>
+        </thead>
+         <tbody>
+           <% @users.each do |user| %>
+            <tr>
+              <td><%= image_tag user.get_profile_image("50x50") %></td>
+              <td><%= user.name %></td>
+            </tr>
+           <% end %>
+         </tbody>
+        <% else %>
+        <h2>
+        Books search for "<%= @word %>"
+        </h2>
+         <thead>
+          <tr>
+            <th></th>
+            <th>Title</th>
+            <th>Opinion</th>
+          </tr>
+        </thead>
+         <tbody>
+           <% @books.each do |book| %>
+            <tr>
+              <td><%= image_tag book.user.get_profile_image("50x50") %></td>
+              <td><%= book.title %></td>
+              <td><%= book.body %></td>
+            </tr>
+           <% end %>
+         </tbody>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>
