@@ -20,9 +20,8 @@
            <%= book.title %>
           <% end %>
         </td>
-        <td>
-          <%= book.body %>
-        </td>
+        <td><%= book.body %></td>
+        <td><%= render 'favorites', book: book %></td>
       </tr>
     <% end %>
   </tbody>
