@@ -5,6 +5,7 @@ class BookCommentsController < ApplicationController
    comment.book_id = book.id
    comment.save
    @comments = BookComment.all
+   render :create
   end
 
   def destroy
