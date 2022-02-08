@@ -20,7 +20,7 @@
             <tr>
               <% @users.each do |user| %>
                <td>
-                 <%=image_tag user.get_profile_image("50x50") %>
+                 <%=image_tag user.get_profile_image, size: '50x50'  %>
                </td>
                <td><%= user.name %></td>
                <td>フォロー数：<%= @user.followeds.count %></td>
